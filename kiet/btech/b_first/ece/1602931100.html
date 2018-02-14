@@ -1,0 +1,904 @@
+
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Created on : 03/10/2016 to 04/10/2016" />
+<meta name="author" content="Sadika Kousar, Devbrat Upadhyay, Jitendra Sharma & Yogeshwar Yadav" />
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+	AKTU One View By AKTU SDC
+</title>
+
+    <style type="text/css">
+        .modalBackground {
+            background-color: Black;
+            filter: alpha(opacity=90);
+            opacity: 0.8;
+        }
+
+        .modalPopup {
+            background-color: #FFFFFF;
+            border-width: 3px;
+            border-style: solid;
+            border-color: black;
+            padding-top: 10px;
+            padding-left: 10px;
+            width: 300px;
+            height: 140px;
+        }
+        .auto-style1 {
+            height: 10px;
+        }
+
+        .button {
+            background-color: #004A7F;
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            border: none;
+            color: #FFFFFF;
+            cursor: pointer;
+            display: inline-block;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        @-webkit-keyframes glowing {
+            0% {
+                background-color: #B20000;
+                -webkit-box-shadow: 0 0 3px #B20000;
+            }
+
+            50% {
+                background-color: #FF0000;
+                -webkit-box-shadow: 0 0 10px #FF0000;
+            }
+
+            100% {
+                background-color: #B20000;
+                -webkit-box-shadow: 0 0 3px #B20000;
+            }
+        }
+
+        @-moz-keyframes glowing {
+            0% {
+                background-color: #B20000;
+                -moz-box-shadow: 0 0 3px #B20000;
+            }
+
+            50% {
+                background-color: #FF0000;
+                -moz-box-shadow: 0 0 10px #FF0000;
+            }
+
+            100% {
+                background-color: #B20000;
+                -moz-box-shadow: 0 0 3px #B20000;
+            }
+        }
+
+        @-o-keyframes glowing {
+            0% {
+                background-color: #B20000;
+                box-shadow: 0 0 3px #B20000;
+            }
+
+            50% {
+                background-color: #FF0000;
+                box-shadow: 0 0 10px #FF0000;
+            }
+
+            100% {
+                background-color: #B20000;
+                box-shadow: 0 0 3px #B20000;
+            }
+        }
+
+        @keyframes glowing {
+            0% {
+                background-color: #B20000;
+                box-shadow: 0 0 3px #B20000;
+            }
+
+            50% {
+                background-color: #FF0000;
+                box-shadow: 0 0 10px #FF0000;
+            }
+
+            100% {
+                background-color: #B20000;
+                box-shadow: 0 0 3px #B20000;
+            }
+        }
+
+        .button {
+            -webkit-animation: glowing 1500ms infinite;
+            -moz-animation: glowing 1500ms infinite;
+            -o-animation: glowing 1500ms infinite;
+            animation: glowing 1500ms infinite;
+        }
+    </style>
+
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-86047021-3', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+<link href="https://erp.aktu.ac.in/WebResource.axd?d=Z55h8QhXO8XnAjeN3QQrMlap5WdoUl8gLdJs39g5Ush_Jz1aN48359oDw9HBuD7bUzWr6hIcfo4kbfOsYmXRuNrW8rzNBmlksn-cccGCOW9RQGFoLdSHpIoedhzA2rUZW-AVEeYqzaUAK7uHPGWALh740sg1&amp;t=635858821300000000" type="text/css" rel="stylesheet" /></head>
+<body style="background-color: white; font-family: Verdana; font-size: 8pt; background: url('https://erp.aktu.ac.in/Images/Site/watermark_logo_white.png') no-repeat center center;">
+
+    <form method="post" action="1602931100.html" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTUxNDk5NzQ5OA9kFgICAw9kFgICAw9kFgJmD2QWAgIBDw8WAh4HVmlzaWJsZWdkFhgCBg8PFgIeBFRleHQFUCgwMjkpIEtJRVQgR3JvdXAgb2YgSW5zdGl0dXRpb25zKEtyaXNobmEgSW5zdHQuIG9mIEVuZ2cuICYgVGVjaG5vbG9neSksR2hhemlhYmFkZGQCCg8PFgIfAQUbKDA0KSBCYWNoZWxvciBvZiBUZWNobm9sb2d5ZGQCDg8PFgIfAQUuKDMxKSBFbGVjdHJvbmljcyBhbmQgQ29tbXVuaWNhdGlvbiBFbmdpbmVlcmluZ2RkAhIPDxYCHwEFCjE2MDI5MzExMDBkZAIWDw8WAh8BBQtQUk9WSVNJT05BTGRkAhoPDxYCHwEFC1BJTktJIFlBREFWZGQCHg8PFgIfAQUTU0FNQVIgQkFIQURVUiBZQURBVmRkAiIPDxYCHwFkZGQCJA8PFgIeCEltYWdlVXJsBZJYZGF0YTppbWFnZS9qcGc7YmFzZTY0LC85ai80QUFRU2taSlJnQUJBUUVCTEFFc0FBRC8yd0JEQUFnR0JnY0dCUWdIQndjSkNRZ0tEQlFOREFzTERCa1NFdzhVSFJvZkhoMGFIQndnSkM0bklDSXNJeHdjS0RjcExEQXhORFEwSHljNVBUZ3lQQzR6TkRMLzJ3QkRBUWtKQ1F3TERCZ05EUmd5SVJ3aE1qSXlNakl5TWpJeU1qSXlNakl5TWpJeU1qSXlNakl5TWpJeU1qSXlNakl5TWpJeU1qSXlNakl5TWpJeU1qSXlNakwvd0FBUkNBRE9BSllEQVNJQUFoRUJBeEVCLzhRQUh3QUFBUVVCQVFFQkFRRUFBQUFBQUFBQUFBRUNBd1FGQmdjSUNRb0wvOFFBdFJBQUFnRURBd0lFQXdVRkJBUUFBQUY5QVFJREFBUVJCUkloTVVFR0UxRmhCeUp4RkRLQmthRUlJMEt4d1JWUzBmQWtNMkp5Z2drS0ZoY1lHUm9sSmljb0tTbzBOVFkzT0RrNlEwUkZSa2RJU1VwVFZGVldWMWhaV21Oa1pXWm5hR2xxYzNSMWRuZDRlWHFEaElXR2g0aUppcEtUbEpXV2w1aVptcUtqcEtXbXA2aXBxckt6dExXMnQ3aTV1c0xEeE1YR3g4akp5dExUMU5YVzE5aloydUhpNCtUbDV1Zm82ZXJ4OHZQMDlmYjMrUG42LzhRQUh3RUFBd0VCQVFFQkFRRUJBUUFBQUFBQUFBRUNBd1FGQmdjSUNRb0wvOFFBdFJFQUFnRUNCQVFEQkFjRkJBUUFBUUozQUFFQ0F4RUVCU0V4QmhKQlVRZGhjUk1pTW9FSUZFS1JvYkhCQ1NNelV2QVZZbkxSQ2hZa05PRWw4UmNZR1JvbUp5Z3BLalUyTnpnNU9rTkVSVVpIU0VsS1UxUlZWbGRZV1ZwalpHVm1aMmhwYW5OMGRYWjNlSGw2Z29PRWhZYUhpSW1La3BPVWxaYVhtSm1hb3FPa3BhYW5xS21xc3JPMHRiYTN1TG02d3NQRXhjYkh5TW5LMHRQVTFkYlgyTm5hNHVQazVlYm42T25xOHZQMDlmYjMrUG42LzlvQURBTUJBQUlSQXhFQVB3RDNvVXRKelNpa0lXaWp2UlFBVVVWaytJUEVGbDRkMDFyeTdZbnRIRXYzcEc3QWY0OXFZRjI4dmJiVDdXUzV1NTQ0WUl4bG5rWUtCK0pyaU5WK0xHa1dnQTArQ1crY25uSk1TZ2ZVZ25QNGZqWG1IaUx4THFIaUs3ODY5bXpHcEppaFhoSXdld0g5VHorbFlwSlBOT3hMa2VsM1B4ZnZuUnZzdWwyMFQ0K1V6U05JQWZjRGJuOUtmYS9HRzVWQUxyU0lYUEdURk9VK3ZCQi9uWGwrVG1sQUpGRmhjelBlTkorSmZoM1UyOHVTWjdHWHN0Mm9WVzQ3TUNSK1pCUHBYWUtjcUNDQ0R5Q0srV3dDRGs5cTZmd2o0M3ZmRE53c01oZTQwMWo4OXZubVAxWk05RDdkRDdkYUxEVHVlL2pwUlZQVDlSdGRVc1lieXptV1dDVmR5c1A4T3hCNEk3R3JsSW9LWEZKUzBBRkZGQW9Bd3JZLzhWMXF2L1lNc3Y4QTBiZFVVNjIvNUhqVlQvMURyUDhBOUdYTkZJWnM0eFMwMzFwYVloYUtTaWtBTWNLU2VBSytmZkdYaU52RW1zdE9QK1BhSGRIYkFFNEtaKzk5VHhuNkQwcjJEeHpmVDZkNFJ2cHJkdHNqQlk5Mk9nWmdwUHR3YStmM0EzWTdVMEJDUms5YWtTQjNIeWlyMW5ZUGNkQWEzN2J3L09jYlUzREhYTlp6clJqb2FVOE81YXZZNXFDeGR6dDI4aXJaMDVrWE8zSG9mV3V4dFBETEIxYVFjWjZWb3lhTkdxL2MrVUR2V01xejZHOEtFVm96emVTemNSbHNjVlJaQ3ByMEc1MHBZZytWNHh5Q0s0N1VMTXdUc1ZCMjVxNlZadDJaTmJEMlhORTZ2NFgrSURwdXVIUzUzSDJXL3dEdWJqOXlZRGovQUw2SEh1UXRlMUN2bDB0Skd5eVFNVWtVaGtZZFZJNkd2cFRSdFJqMVhSck8vanh0bmlWOEE1d1NPUitCeVB3cm9aekl2MHRKUzBnQ2w3VWxGQUdEQXhIanJVbDVQL0VzdEQvNUZ1S0tiR24vQUJYdW92dklQOW1XbzIrdjcyNDV4L25xYUtRemQ3MG9wTzlPRk1RVUNpa0hGSURodmlyTzhQaFdKRlB5eTNTSTMwMnMzODFGZUs3ZzBnSGJOZXlmRnY4QTVGcXp6MCsyQS84QWtOLzhhOGV0b0dudUFGSHlqcWZTaTlrQ1Yya2pxZEhUNUZPM2l1MjA2UDVSaGM4Y1Z5bW55d1dxcEhJd1ZzWitsZFhZWDFvd1VDUmM0eDFyejdOeXVlbmRLUEtqWGpqR2R2SXBzc1FERElPZTNQU3BJNVlteHNZRS93RDE2Zk15Qk11U1BhdGQwWm93cjJBdXBHVGcxeG1yV0JBSklBSHJYZFgrbzJOc3BFc3lBbm5rMXpkN2ZXVndyTHZYQjR5Q01DcDVYZTZORk5XNVdlZXlBTElWRmV3L0NiVWZ0UGgyZXdaZ1dzNXpoUU9pUDh3ei93QUMzLzV4WGttcVd4dHJ0MVZzcm5naXZRUGc1Y29MelY3ZDNVU09rTG9wSXlRcGNIQTY4YmwvTVYycDNWenpwSzBtajF6dFMwZzZVdmFtU0ZGRkxRQnphT2crSWQ4cHlIT2xXNUJCN0NXZlBINGlpaU12L3dBTEh2TUFlVi9aTUdlZjR2T2x4eCtkRkF6b085T3BvNjA2Z1FVVVVVQWVmL0Z3SC9oRzdOc25IMndEYjZuWTUvb2Z6cnkvVGJkcHJVaGZseTNKRmVzZkVHSVh0a2JSbTVVTExHTTlUa2c4ZlROY0pvZG1BSklIQTNCc0QvQTFoVW5vMGRWR203cVQyS1J0clk3b3dMdWFSSXpJNGlJQVZWR1NXWWpBQXgrdFEyVVAyMloxc211WWZMajgzRXNnYks1QTRJQTR5dy9PdXdzTk1lMmttOHFPTjRwNDJqbFJ4dzZuZ2c0UG9hczZKb0thTkpPOXVycThvSzduSWJDRWdzb0JHTUhhdlhKT090VENVZVhVcXBCODJteERvRnhkcy9rVHNUc0E1SXg5YTJkWE1rVmtRR0lKUEJ6L0FFcWxEQ1lMdFhUSXg4dlhzUFdybDdLTGdvcDllNUJGWXBtL0xzY05xTnFWVnJtOFM1bGpCQUtvY0VrbkFIUGYyNzRQb2FodDRiSnJTTzhrMCtXRzNaekY1aXlsbERlamcvZFBjZE05czgxM0Y5cHlhaHBjdGxLb01NekJuNCtZTU1ZSVByeCtXZnBWQ0xSWkxUVHhwOE8xTFppUzRBSmFRbmo1aWV2QUE2ZE1Wc25GUk1tcE9kOUxISGFycGNTMjBrME83YmpQSnpXbDhLRUNlTHBacERoUmFPaTg0eXhaQ0I3OEE4ZTFhdXBXSGs2WkpEdHd6S1FEVUhoYXhpZ2lRN2YzeFlORzQ3dUR5TWV1UDVVUXFjc2RRcVVWS1YwZXhEcFJTS2VCUzEwbkNLT2xGRkZBSExnQS9FK2I1anUvc2FQanRqem5vby81cWZLTVpIOWpKLzZPYWlnWjBVTWl5UXh1Z3dyS0NQb2FrRlZkTVl0cGRveE9TWVVKSS8zUlZ1Z1FVVVVVQWN2NHVoMm0ydUZJRHFlcDc0NmZxMmZ6cnovUjNDWERNd0trbmtHdlVQRXNMU2FTMHFKdk1EZVpqR2VNRUUvZ0NUK0ZlVXp2NU4raFZ2dkQxL3o2MXkxbys5Yzc4UEpPRmp2TFJvMjJrbms4NXpWcDBBWGRqa2VsYzVZWExNcTEwVU15dkFBVzdZNjFsRjlHVkpXTUxlMDE4OFlHVlU0QnExZlFTUUlzbXpjdzU2OXF6N3l5bk9vZVpITXlBdDhtMGpIcjh3SS9rUlV0eGEzczhLdExjeXdoVDkySmhrbjNKQjQ1ejcwa2tYZlkycklyTkFHem5JSGJvYWxrQ0syU1BhcW1sN29ZaUpUbDJPZU9nT0tmY3pmS1FEem5nWnpWN0diM01UWEpsRUpUaXEzaENON2k3dG8yVFlvbUxJTWR1djhBSUdxZXVUZklRWDRQSE5iZmdCNExxOGxFYkJqYktHYkNuaG1CQTU3OFovTVU0eHV5NXk1WU05RUZMUU9sRmRaNWd0RkptbG9BNWJCLzRXbXg3ZjJLUHIvcnpSUVQvd0FYU3dPdjlpLysxNktaUnNhR1MyZzZjV09TYldJbi92a1ZvVm0rSC84QWtYZE15ZjhBbDBpLzlBRmFWQklVVVVVQUZjSjhTTGVDSFRiUzZDQlpCY0JHZnA4cFU4SDE1QS9XdTZKd00xNHY4UzlmR3Bhd0xLM2xMVzFwbFhIUWVia2h2cmpBSDRHazBub1ZHWEs3bGpUcm5HM0o1cmEvdERaRmpIVG5OY0JwT29uQWlZa0grZGRQYlhlNWNFZy9XdUtjSEdSNkVacWF1aTRkVUFjTXl1MkRrL0tjVlBKcnNMcUZFVXpjNSs3OTNIYXFBbWVHUVNLbTljOGlyVGFtQ01DMGNGdWNsQmdmNXpUaW9tbGtXSWRVVXRrSStPbktrWS9PcHA3b0ZDVCtXS3k0NVR5eEhCOXUzYXF0M2VDTkdPY0tCbk5LMnVnbXRUTDhSWFlFUlVkV05XZmh6clRXbmlWTGRud2x5dmw0UFRkMUg5UitOY3pxYzhsdzVuSVBsSDVWUDA1eCt0VUxlNWx0THFLNGlZckpHNFpTT3hCelhYVGhhSncxYTE1K1I5UGcwdWMxaitIZGNnMS9SNEwyRWpjd3hJbWNsRzdnMXNWUmdMUm1rd001NzB0QUhNTWYrTG9KanIvWXgvOEFSd29wVC95VTlQOEFzRE4vNk9GRk1vMC9Eelo4TmFVZituT0gvd0JBRmFkWkhoZi9BSkZQUnY4QXJ4Zy85RnJXdG1na1dzelV0ZjAvU0pZNDd5NFdObkJJendCOVQwR2VjZXVEam9hWFdOV2owdTBlVEFlWEh5UmxzYmoySCtmZXZOdFR1NXRSdFlaWjJVU3phbkRKSzBzWUhsaHJaWFZCL0Z4bHZmcU85T3dNNmZWL0hObWJGbDB5YnpKWERLSk52M01ESlA0RG4yNzE1Yi9ZMXpldExkVHpNVllHUU1pN2kvQkl5ZWd5UXdISnlWSTY4SGRqUUlWaFVJcUloOHdGUXVHSkNzV3h6a0JtYlBYQzQ5SzBiYTFTWHkvc3NqWlJZM0I4b3NRSkFwamJia1pCa1F1QUQ4dTNua21sYXczTk5KSkhOcHA4TnRlR0xhaXloaXJSN3dXVVlCR1FPaHprSFBJd2VuU3JyUXpXWkRjdEg2NDVGUHRiSkV2bWxSY0llRUJ3VHQ5U2ZVOVQyOXEyeENyUmM5RFhKVm5lV2gyMFk4c2RTalphcEFQdkhuMDRyU0dyVy9PUUQrRlpqNkxITGxseUNEamptblI2TktuOEFiOUt6VmpZZGMzYXk1OHNjNTdWaTZxR0ZsS1NjbmJrMXVDeWs2S2h6M3hVZDVwaGUyWlNNN2w5YWFkbUQxVmprdEZSN2ljUmxjd3lrUlNFalBCT2NZNE9UanNRYW11UEIxNWJMTThrc2FpTldiQkRIYUZ6dUxFRGpHT3ZUa1p4UkJZL1o1U2dUZTNVZzQ1WEk0NTQ1NEg0OUQwcnIxRWF5b3NWM3RlTlEveXhwQ1NBY0VsZUNkcDY3UW5CSHpBY0h2aStaSGxUanl1ek1Yd3JxdDU0TDE3eU5TZ2tqdHB4dGt5TUQyY0h1QnowOWE5cXQ3aUs1Z1NlR1JaSTVGREt5bklJUHBYazk1cHR0ZldyUlhOcExITzJNSHl4djVCS3R1Q0tXQXpnNUxmMXAvaFMrdjhBd3RMSkN5ejNWaElkd2dWVHZYSUpETDJ6Z0VrWjZBSFBxTkZMWFE5YXpSVkd5MWF4MUZOOXJjeHlESkdBZVJ6anAxNjFlRklSempnRDRrd25QSjBpVGoyRXlmNDBVVEJsK0kxcSszNVgwbVlaOXhOSC93REZVVURMZmhVZytEOUUvd0N2Q0QvMFd0V3RRMVcxMDYxbW5ta0d5QkRKSmpuWW9HY24vT2ZUTmVYWG5qaWF4OExhWHBPblpoa1RUcmNUWEF4bFNZbEpDK2h3UnoyUEh2Vnp4RkZMcC9nUFRyRkZaNXJ1U1A3U1grWm1ZZ3lNU1R6bmVCejZDdDQwSDdybG9tWnlxSlhzVGFwcThIaUZCcVVTc3RwQThwa0xSZVlRZ1FBL0tHQjU1QTdnTWVSME9UYmlVV3NPQkt3dXJOb0xpMk1ETVZ1SVNvUTdPY01Vd3Y4QWRIY1k0cXA0ZmtodGRMdTRaQW5ueHkrZW9rWmNOaG85dTBGZ1N5N0hJd09OM1VETldyZXpSTGE3ZDdxemt0STFkcHlSdjhvYmZ2SU03QWZ2cWVNakRBRnVnVlNLakpwYkVxYmtyc3VYTnpZeUc0c25ZTXNpcisvTEhiSzRiTHJuamR5Z1g1VHlRUG1MRTQwWHM3cVN6OHgvTEVGMkdoMjRVN2d5WVZ3VjdiUTNISTZZeFYrd3VMVzNzVzFLOGo4dHd4d3o1Wm15VGdya0FrSE9BY0Q4TzNINjU0cnV2N1EwKzV3WTdhM21KVzNUSDNNRUVFZDJLc1Jub08yT2F6bXROQndkcGFtN0phRkpjZ1k5Z09sVEFiRkFPUU00QXpWMUJIZFc4ZHpDeXZGS2dkR0J5Q0NPS1pKRHdHQXd3T001NjE1cmkwZXJHU1pXamdLdHVRZGVjMWFFYlNZeVNCaWtYNU04bjgvODRxd2pGd09NSEZDUU1pOHNLZ1VldmVvNUlBeTdtQnlUNmNmNTk2dGJTMGhIR1BTb3J1U09DQjVKSkVpalZNbDI2QUQ2ZlQ2bnRWV0ZjNVM0MHhwTG1lNWpaekZBak00alJENVlIZHR4QUl4ejEvaFBCNlZlczcxbHpISUhFZkpqblpCRWtQR1ZWa1FMblBPTWM4bkJBNXJQMHVXZlVkVGE2dGJGTGxKQmg0WlFQdWozd2NFY0hqcHU1NE9EZm4weDdBdk1KWnJkVlZ6YmhsRWpEZW1HQkp4MHgwRDQ3NTVydXBSdEU4NnRKT1doR3VyeGYyZ3NLK1RMak1VWmc1ejh1NW1KeVZQS0tOb1BKQjNZMjVOU0xVWTlpeEpCRmN5ekp0bSt6dzduWXVBektGNk55eThjajVOeDZxS3o0Yks0MVR6MnRTQUkxL2VTK1dzYUtweGxtY0VaYkE1QjlUempORjY5ckZFTGJTL05TM1dFeFN6cytHblVrRURBd0F2eWc1d0NjNElBQnpvbGZjalZHbkhxMmtEVXJhemhSNFoybFZQT0IzQ0o4Z3JrODVZdGpKNXdBQVR3Y2VuNmRxc053eTJjMHNTYWdrUWVXQlcvQXN1ZXE1Ny9BSjgxNFpaMmNVZC9adVgyd1J6eHRJZWZsVGNDZUIxd0FhNlh4N3FVTTk1cGMrbjNCM0lqc0pZbXhqNWh0NUhRZ2c4ZHE2SFFoS1VZMDN1VEdyS3o1enZicFFmaUhwN2R6cFYwTVkvNmF3ZjQvd0NjMFZ6bmhMeEszaUx4VHA0dVArUHUxMDI2V1Yxd0ErNlczd2Nkajhwei9rQXJsbkZ3bHl5M05vdE5YUnhsam9Zdm80NVpwN2EzdGZzMXQrK3VaTmlmUEFyQUQxT1Bmc2ZZVjBsNWM2UUp2dE1iWG1veTRUYTA3RVJMakdjaGh1SU9PVk9SZ25tbE9tWEYzNFo4TytRRElEWVc2eUoySDdvRVBqdDFJL0ZRT1RUMDBXQzJ1Zkp2YnRiaTR4R1JhUUE1TzU4WUxlaDdaMmpKSFBOWE9wT2RsMkNuR2t2ZWw5eG42VGJSYXA0bVJwSVZXVkY4MUZqNVhnQUhoaWVvSXJ0OU8wcU96bWQ0b3pHQ3hDb0ZVQkZ6OTFNQVlIVDlQdzVKdFlzTGU1c3IrMXNZYmNSRGZLc0RmdldqSklZTjhvL3U1SEp6eHlNNXJ2NHZ2RGNlZU9wNjFNVmJjaXJLTW5lS3NoODlwRFBDMGJ4aGxjL05ucWE4ZDhlV1M2WnJzZHBHU1VhRVREbnBrbFNQelFuOGE5cEQ1a0s1NlY0ZjQ3dmhmZUxyMTQySlNJaUFaR01GUmhoLzMxdXFpQ2J3MTRuYlM0VXNiam0wM0VxNDZ4NU9UOVJubjgvV3U5dEw0WE1LelJzclF0MGRUa2Y1NjhmL0FGNjhjVmlEVjZ5MUM0c25FbHJjelFQMEpqY3JuNjQ2L2pYUFVvOHp1anBwVitWV1o3SW9UeS91anB5TS93Q2ZTbzl5NUdHQXgxcnp1MThhYXRGdzhzTTQvd0Ntc2ZVWTdsY0UwWFhqTFZKa0NvOFVIcjVTY244VGtqOE1WajdHVnpmMjBiWE8zMUMvaDAyTHo3cWFPTlRuYU0vTTMwSFVuL1BGZWM2NXJzMnFPVkpLVzYvZFRQWDNQcWY1ZnFhRjFmVFhVclNUU3lTeUhxenNTZnpOVUpYT0N4NkRtdG9VVXRXWTFLN2tySTl0OEYyeTJmZzNUK1Aza3lHVXNRQVNIWXN1ZndZWStsYmtsc2t6SFBERDNxbHBFRFcyaWFiYU1jbTN0WW95Y1l5VlFDdEk0alE5VDdldGRDT1ZuQWVMaloydHpZYVRhK1VOelNUWEtRdUEyVlQ1QzY5OGtnOC8zVHdlTWN4Y1lNN3FHNHozeDB4WFIrSi9ENXRkWkdycEk4Z3VDd21EdHlqYmZseHh5dUJqMjQ2NTQ1bDFQMnR4bnJqQXg3VWl2c2pCdUkrWHBuMXB4Z1dhRmxjNUE1SHpWSmdvbkpPMERQTk5pVmlxSUFTV0djWjYxVVh5dTZKTmI0Wnd0SDQ5a0REQi9zMmIvd0JHdzBWdCtETlBOdDRrMDI2T01YZW5Yakp4MVJaTGJCL0hKeDdZUGVpbFduN1NmTXpTbkcwYkV5VC9BR2J3Tm9keWp6SXYyRzJWakVjTVZNWTQzWkJYNjl2UTlESkI0YjFpNmZ5SklZTk90QUFESEVSdEk5Z3B5VDNPU08zcHhmOEFEcXh2NFUwSGVvWUxZMnpBRVo1RWFrSDhNVnkvaVh3OWNhbDhSeHAzOXJTUkxmdytlaElMZVdBcEcwRGNNLzZ2T2VPdnRreTIwU2xlNXJhbDRKa2dqUWFkYnlUdEl4ODFtbFVZSFlESkE2OCt0ZERvMm4zOEdsV2FYU243UWtTckp1Y01jZ1k1STcxeVBoK3gxWFVMRHhCNE92ZFNramxzM2hNVnlDWElVbmNWemtIYVFxOFovaUk2REZaL2c3d2hOZGVJTHE3WFZwSTIwblVEQysyTG1mWTNQemJ1QWNjakI2MHVabGNxc2VxK1U0bTNLT0dYQk9lOWVOYWw0RzhVWGVvM1Z5TkhjK2ZPOHZFOFA4VEZ2Ny92VW1pcmM2ZjRwMUx3dE5xOXdGdlkzdEJkWUpJbEh6SzVCYlBUY01aNTM5ZTlZNDBtNGg4SWF0cVMzOGl3MmQrTGI3TXFrQ1FqSHpkZXZ6OU1jYzgwcnNPVkZzZkQ3eFNUbit5V0hIL1B4RC84WFFmQUhpZ05qK3lHNmRmdEVQOEE4WFZwUERVdmlIeFJGb3RscWtzcWFUYitYTnFES1Q1WkVqc0FnejFCZllPZjREMkFyVThjZUU3aVBXYmE2YlZwSkUxWFVZN2RVYVBQazcrQWM3dm1BOU9QNjBYWWNxTVQvaEFQRkM0LzRsTE1lK0xpTGoveCtuRHdCNG5JL3dDUVVSOVo0djhBNHV2WC9EbWovd0JnYURhNldibDdrMjZrZWE0eG5MRThEc0JuQUhvQldxYzRvdU94NE9mQUhpbkdmN0pZWjdmYUlmOEE0dW15L0RqeFE2aEJwdytjWXo1OGVGK3Z6Znl6VTExWVA0ZXZQRStsM21xWFN0L1o0TVUyRGk0L2VSbGM4OVNTVS80RTlhMEhoQjQvaFE4OHQrOEJPZFQ4cmJsU29qTzFNWkhMQXFmWThjMGN6RnlvOVFTMUtra0FVRzNsSk9RQVA0ZWE4OCtHRHpTMkdzYUpOSTBSS1IzRVRvL3pLSlkrcTloZ2JHK3JWeitqZUNyeThzZFUxRFQ5UUtYbW0zTXNFY2FSN0drTVlCeUhEWlVuUEgwNjk2Zk13NVVlbWE3bzkzZTZjMFZ1aXlPV0J4bkhHZjhBUDVWbTJ2Z3FPNTA1RnZJRGIzZnpicEVreTNYajFCNHdQOEt4TmFrLzRTbjRYV09zWEY0ME1sb04wdjdzTjUwZ0pqSEFJMjdtd1Fld2JwVUhnR0E2NTRQMW53NGJxU0J3NlNwSW5PeEpBQ0JqMEpSc2pQUmlPOUhNdzVWc1dMM3dKcTBiUEhiK1ROR3grVnQrMGtlNFBmOEFPcHJYd05xQ1R4bTdhQllEL3JHU1FsZ3ZjZE1aUFR2MU5ZWGh2U1k3ajRiK0tKSjd1V0hKVlpZZ24rcmFFQjhEbm5ka0tlblRGZGQ4TjlIR20rRUZ1ZzdCcjkvUDh2OEFnVVp3cEE5MUFKL0NqbVluRldOVlVDK05OSkFVQWYyYmU4QVkvd0NXbHJSU2JndmpmU2lUeC9adDhNLzl0YldpazFxT094UzhOdUI0VjBoV3d3V3h0enllM2xyV0Q0MlhWbitJMm5qUlcyYWg5Z0hsdDh2VGRKbjczSFROYkhoN0E4TmFLeW5HN1RyZnIwLzFTMVU4UmZEN1U5YThRVDZsRHJLeEJ3Qkh1RGJvaGpCVVlJNDc4WXprNTdrMUxvVERxYkhnand0Y2VIN2E2bnY1MG4xRzhjTk02T3pEQzV4OHpjazVaaVRnZGNkc210NERKT29lS1FlZzFlYkgvZlJyYzFuUnJyVWZEVDZYYmFqTkJPVmpVWFJKM3R0SUp5Umo3d0JCeDYvaFhJNlA4TnRSMC9Wb0w2VFhXSGxUck15eEkyWmVjc0Nkdys4T0NlYzVxRFE1clhMR1c0MVR4aHFGczVTNTB5OHRybEhBeVZHWkFTUHA4clovMktMZVZiajRYZUpMZ1pSVzFWWk1aOWZLUDlhNlN3OEZ2b092dGU2ajRoamUzdTJlTjQ1eVFic3VwUlVjRnNOeTJjYzVJN2RxZW9mRG82WjRlOGlieExIQlpyY3ZMSzF3bmx4c0dWRlhkODJDd0tjSC9hUFR1QVMrRFlyendqNHdmdzVleWViRnFFQ3p3T24zZk1Da3RqMCs2NDlmbFgxcmM4ZjQ4M3d2eWVkY3R2OEEwS3FsNzhQTHEvMGJTN2VUWEpGdmJEelI5cU1iTVdEdGtBSGVHRzNBQTU2ZWxaMnNlQnBkUzhReVJ5ZUsxRTB6R2VHQ1k3cFFCM0M3aHdPY0VBWS9PZ0QwOFV0YzU0ZGwwN1JMYTM4TnRyY1Y1ZjI0WUVQSVBNYkpMWTI1SkdBZUJrOEQycm95Y0FtZ0R6ZjRsNlZhM2VzZUhYbFhtNHUxczVTdkJhTm1YalBYakxZK3BxNzhVTGw0dkNzT25XeWJwYjY1amdXTlB2RUQ1aHRBNVBLcU1EKzhLejlhOEx3K0svRk41TGFlTEl2TWpaV05vbzh4cmZhb1U3Y09QNGhrNEhCSnFwSjRRdGZFYnd3V1BpdnpaZElnUzFtSmladGpEUHpyODR3Q2ZRbjd2M3VLQU0vd3JlNmhaZVA5TmZVdEwvczc3VmJHeFVHR1NGV1ZGRzBnT2VUbEkxL0VWMW5nVzVpczlOOFMzVTdDT0tMVnJtUjNZNENxRlVuK1ZadXZlRmJUeEk2YXluaXlMN0pad3BDODJCTXFzblZ0d2NCU2NnL1g4TVplbWZEcTIxYmVMYnhkRGRvamhwMWdoenllL3dEckRnbmIxSVBUMm9BenBKSmwrRXVqYWRDWGFiVUwxOFJvQ1djSXpER0J5VHYySDhxMXZCMS9xTWZ4Rkw2cFlTV0Q2bGFtSllCQzhTWmpWZHBDdDZMR1IrTmErdGZDNGFoZFF5V09zeTJjTUVLeFF4TkVaREh0R01xZDY0emdFOXljblBOV2RmOEFoOVBybmlKdFZYWHA3YlBsbU9OWXl6UTdRQWRqYnZsempQVHFTZWFBT044VXZOcE9zK0p0QnRrZGpyRTl2SkRtVGdNVzNuai9BR25ZajZBZGE5aFcwaHM5TGl0SVUyUVF4ckdpNVB5cXVBQm42Q3NUVnZCME9yZUxkTjE1N2piOWtDaDRESGtTYlNXUWhzamJoam5vYzRBNHJkdjVoQmFGK2NraFFCMUpKQUg2MDF1SjdHQUpCSjQ1MDBBY3JwOTZQL0lscC84QVdvcGxySDVmalBTai9FK25Yek1mVW1TMHpSUkxjVWRpRHc2Z2Z3cG9vLzZoOXVSLzM2V3V5SFN1UDhMRUR3bG9PNytMVGJicjF6NVMxMFUrc1dOcXA4MmJhUFpDZjVDcWt0aVl0Szl5OVMxZ0o0ejBKd3hGNDN5bkJ6YnlBOU05MXEvWTYxWWFqdjhBc3MvbUJBTWtJd0hQVGtqbXBzeTdveGZHV2wyYzdhWHFVa0lhN3RyNjNqaWtMSDVWZVpOM0hROUJYTC9GdlVGbVNEUnd5Z3BDMTI2c1B2a25aR0I2bmx6K0ZkZjRpMEdMeEU5dVcxYTl0VmdPN3k3ZDlxczJRUXhIY2pIQjdkUnpVR3NlRDdEV3RJczdLNXU1ek5iSWlmYkdWV21sVlZJdzdFWk9TZHg5NkxNTG9sdnZGY2tFNnJaNkpmNmhidEdraTNWc29hTjFZQWdvUjk3ci9rYzFRdmRNdExUNG02TmZ3UTdMbStndW11SDNFbHlpUkt2R2NEQ2tqakZkUmFDS3hzYmUxTTd5K1RFc2ZtU1lMUGdZeWNEcWZZVjU3cmMvaHVmeE0rb1hIaXJWN1c2aGJDUlJ4eWdRZktvWUlOaHdHMjgrdmVsWUxvZGVhUnBuL0NYMmVtYU1ubWFtbXFmMnJxRnl3R1lVM0YyajNBRGhpd0FYbnRucVRYVlcvaU80dXRhT21qUXRVampXUjQydXBZdGtmeTUrWUh1RGpqNml1YjBmUjlGdTlVZlc5SThSNnFrZHhmZWRMRkh1alNSOSs4b3k3UVNQbXh6bmcxMzBqUnl3c25tRlE2NDNMd1I3ajNwMllYUjUxcFdtMmRsNGpaTkJoSzIyZzJjMGR4ZVlVdGN6TU0rV3hBRzdialBzUmpBR0tUUU5EMDBTK0hJSXJlTXg2bm9Fc044cVpCZFNJeWNrY2drc3d6MTRyZjBEd2ZiK0hycUtXMjFyVVpJSXd3K3l2SUJFeEl4a3FCalBlalRmQSttYVUxNUpiWCtvTEpOYlBhUXY1M3pXc2JIT0l6amdnNElKeVJqM09TekRtUmxhVHBEWFBnbnhOcE9ueGdNZFJ1NElVM1lBQ3NGVVpQc281TmFmZzRYVmpxZXBhVGZhZnBkdGN4cEZjQ1RUb2hHa3NibHdBUmprcVZZWlAvMXl5MzhDMmR2Wlg5cExyT3FTeDNwRFB2bEh5eWJ3L21Eajd4S2pKNzk2bTBlMDAzd3pQcU05eHFkM2QzVGVVTGllN0xNVlRvbURqN21TMlR5QnprOGNGaHJYWTYybHhXUFA0azAyMkZ3WnBYWDdQSXNVb0VUc1ZMZmRKQUdkcDdIb2FkYWVKTkx2cGZMZ3VDV3d4RzZKMXp0SzUrOEIwM0wrZEliVFc1clZCZC84ZTU1QTVIWDYxU3RmRVdtWHBZVzl3WEs4Tis3WVlPU080OVFmOG1wYnk3amUzZEkyeS9HQmpyVmNySWNsWXhBK2ZHK21ZNnJwOTZPVC93Qk5MU2ltU0xKQjR5MGdKeXgwNitKSjcvdkxXaWs5d2pzVnZDVXUvd0FGNktDY2xMR0VjZjhBWE5hdDNXNW1VZ0VPaERaOVJudFZid25CSXZoUFJTU3VEcDhHUjc3QldoUFp5dTZNR1hjRDNKclpHTWxxY2xya01VR3B1cXhwR3NrWG1QdEFBWW5kbGo3OFYybHJCRmJLd2pqVkFTU2R2OFI0R1QzUFFWeSt2YWZJbXA3d1VZTEN1Rko2OHYzeDdWMXdna3ljRmV2clVsUFpFZ3d2R2Frem5xRHhVSUJVcWVDVHgxcVREYmR3SXBpRVpjdDFBejBKUGV1SzhhZUdVMVFDOWh6OW9DN1FSZ0Fuc0Q3Y2V2QlBwWGJNbThIUDNsUFhOUlNXZ2xWb3BBckFqa0hwaWx1UzAydER6MzRabWJmcWRtNFpVdDVFazI0d1E3QmxZSDMrUmE5SUxnREdmVEFyaWZDdmhxOTBiV2RibnU3aUdaMlpmblVIYys1aXhZOEFBbmpJSEdTZlN1eU1UamNHS25ITkNkeW1tS3BPL1BBRlNqNm5wVmRvcE5vMmxjL2xUNGxkZUdJOURnLzU5YVlFamZyMnJQMUd3RjI4VTZ4bzhzYXNqbzQrV2FOaGhvejdIanIzQTk4Nk9OeVpQV2tNWjI5cWxqVGFkMGNYTFl5Tkt0akpBODBheCtXcExZZWExSkhIT2Yzc0xiVDZuNm1yZWcyWnRyV1czbW1MeXBPQVZ3QW1RUHZxTVpYY0dBSXllZzk2Nm9RczdIa2NjYzFoNngveEtiQzkxRlVVc0ZhVmxCUHpNRnhuOGxGT0tWeldwVmNrYzU0SnQyZzBScnVZZk5kenRQSGtZS29lRi9QQlllekN1d2lYQ2JtNWtQNlZpYUhwbDgxbGF5UDltVzFGckQ5bFZIYmNCdDVMOFl6MEFIUGZrNTQzSVZaNW1nT0MwYkFFOWpWdXhncjNNWFZKQkY0dTBkai9BTStGNk9RUCtlbHI2MFVhekcwUGkvUi9NYnJZWHVObi9YUzJvckI3bTBWb2YvL1pkZAImDw8WAh8AaGRkAioPDxYCHwBoZGQCLA9kFgJmD2QWAgIDD2QWAgIBD2QWBGYPZBYIAgEPDxYCHwEFITxiPlNlc3Npb24gOiA8L2I+MjAxNi0xNyhSRUdVTEFSKWRkAgMPDxYCHwEFAzEsMmRkAgUPDxYCHwEFC0NQKDApLFBBU1MgZGQCBw8PFgIfAQUJMTM5MC8xODAwZGQCAQ9kFgYCAQ8PFgIfAGhkZAILD2QWAmYPZBYSAgQPDxYCHwEFATFkZAIIDw8WAh8BBQNPZGRkZAIMDw8WAh8BBQE5ZGQCEA8PFgIfAQUBNWRkAhQPDxYCHwEFATRkZAIYDw8WAh8BBQM2NzRkZAIcDw8WAh8BBQVDUCgwKWRkAiAPDxYCHwEFBDcuNThkZAIiD2QWAmYPZBYCAgIPPCsAEQMADxYEHgtfIURhdGFCb3VuZGceC18hSXRlbUNvdW50AglkARAWABYAFgAMFCsAABYCZg9kFhZmD2QWAgIGDw8WAh8BBQVHcmFkZWRkAgEPZBYOZg9kFgICAQ8PFgIfAQUGUkFTMTAxZGQCAQ9kFgICAQ8PFgIfAQUVRW5naW5lZXJpbmcgUGh5c2ljcy1JZGQCAg9kFgICAQ8PFgIfAQUGVGhlb3J5ZGQCAw8PFgIfAQUCMjVkZAIEDw8WAh8BBQI0MmRkAgUPDxYCHwEFAi0tZGQCBg8PFgIfAQUBQmRkAgIPZBYOZg9kFgICAQ8PFgIfAQUGUkFTMTUxZGQCAQ9kFgICAQ8PFgIfAQURRW5nZy4gUGh5c2ljcyBMYWJkZAICD2QWAgIBDw8WAh8BBQlQcmFjdGljYWxkZAIDDw8WAh8BBQIzOWRkAgQPDxYCHwEFAjQxZGQCBQ8PFgIfAQUCLS1kZAIGDw8WAh8BBQFBZGQCAw9kFg5mD2QWAgIBDw8WAh8BBQZSRUMxMDFkZAIBD2QWAgIBDw8WAh8BBRJCYXNpY3MgRWxlY3Ryb25pY3NkZAICD2QWAgIBDw8WAh8BBQZUaGVvcnlkZAIDDw8WAh8BBQIyNGRkAgQPDxYCHwEFAjQ4ZGQCBQ8PFgIfAQUCLS1kZAIGDw8WAh8BBQJCK2RkAgQPZBYOZg9kFgICAQ8PFgIfAQUGUkVFMTUxZGQCAQ9kFgICAQ8PFgIfAQUbQmFzaWNzIEVsZWN0cmljYWwgRW5nZy4gTGFiZGQCAg9kFgICAQ8PFgIfAQUJUHJhY3RpY2FsZGQCAw8PFgIfAQUCNDZkZAIEDw8WAh8BBQI0NGRkAgUPDxYCHwEFAi0tZGQCBg8PFgIfAQUCQStkZAIFD2QWDmYPZBYCAgEPDxYCHwEFBlJBUzEwM2RkAgEPZBYCAgEPDxYCHwEFE0VuZ2luZWVyaW5nIE1hdGhzLUlkZAICD2QWAgIBDw8WAh8BBQZUaGVvcnlkZAIDDw8WAh8BBQIzMGRkAgQPDxYCHwEFAjQ4ZGQCBQ8PFgIfAQUCLS1kZAIGDw8WAh8BBQJCK2RkAgYPZBYOZg9kFgICAQ8PFgIfAQUGUkFTMTU0ZGQCAQ9kFgICAQ8PFgIfAQUeUHJvZmVzc2lvbmFsIENvbW11bmljYXRpb24gTGFiZGQCAg9kFgICAQ8PFgIfAQUJUHJhY3RpY2FsZGQCAw8PFgIfAQUCNDBkZAIEDw8WAh8BBQIzOWRkAgUPDxYCHwEFAi0tZGQCBg8PFgIfAQUCQitkZAIHD2QWDmYPZBYCAgEPDxYCHwEFBlJBUzEwNGRkAgEPZBYCAgEPDxYCHwEFGlByb2Zlc3Npb25hbCBDb21tdW5pY2F0aW9uZGQCAg9kFgICAQ8PFgIfAQUGVGhlb3J5ZGQCAw8PFgIfAQUCMjBkZAIEDw8WAh8BBQI0M2RkAgUPDxYCHwEFAi0tZGQCBg8PFgIfAQUBQmRkAggPZBYOZg9kFgICAQ8PFgIfAQUGUk1FMTUyZGQCAQ9kFgICAQ8PFgIfAQURV29ya3Nob3AgUHJhY3RpY2VkZAICD2QWAgIBDw8WAh8BBQlQcmFjdGljYWxkZAIDDw8WAh8BBQI0NWRkAgQPDxYCHwEFAjQzZGQCBQ8PFgIfAQUCLS1kZAIGDw8WAh8BBQFBZGQCCQ9kFg5mD2QWAgIBDw8WAh8BBQZSRUUxMDFkZAIBD2QWAgIBDw8WAh8BBRdCYXNpY3MgRWxlY3RyaWNhbCBFbmdnLmRkAgIPZBYCAgEPDxYCHwEFBlRoZW9yeWRkAgMPDxYCHwEFAjI2ZGQCBA8PFgIfAQUCMzFkZAIFDw8WAh8BBQItLWRkAgYPDxYCHwEFAUNkZAIKDw8WAh8AaGRkAg0PZBYCZg9kFhICBA8PFgIfAQUBMmRkAggPDxYCHwEFBEV2ZW5kZAIMDw8WAh8BBQE5ZGQCEA8PFgIfAQUBNWRkAhQPDxYCHwEFATRkZAIYDw8WAh8BBQM3MTZkZAIcDw8WAh8BBQVQQVNTIGRkAiAPDxYCHwEFBDguMjlkZAIiD2QWAmYPZBYCAgIPPCsAEQMADxYEHwNnHwQCCWQBEBYAFgAWAAwUKwAAFgJmD2QWFmYPZBYCAgYPDxYCHwEFBUdyYWRlZGQCAQ9kFg5mD2QWAgIBDw8WAh8BBQZSQVMyMDFkZAIBD2QWAgIBDw8WAh8BBRZFbmdpbmVlcmluZyBQaHlzaWNzLUlJZGQCAg9kFgICAQ8PFgIfAQUGVGhlb3J5ZGQCAw8PFgIfAQUCMjdkZAIEDw8WAh8BBQI0MmRkAgUPDxYCHwEFAi0tZGQCBg8PFgIfAQUBQmRkAgIPZBYOZg9kFgICAQ8PFgIfAQUGUkFTMjUyZGQCAQ9kFgICAQ8PFgIfAQUTRW5nZy4gQ2hlbWlzdHJ5IExhYmRkAgIPZBYCAgEPDxYCHwEFCVByYWN0aWNhbGRkAgMPDxYCHwEFAjQ3ZGQCBA8PFgIfAQUCNDZkZAIFDw8WAh8BBQItLWRkAgYPDxYCHwEFAkErZGQCAw9kFg5mD2QWAgIBDw8WAh8BBQZSTUUyMDFkZAIBD2QWAgIBDw8WAh8BBRxFbGVtZW50cyBvZiBNZWNoYW5pY2FsIEVuZ2cuZGQCAg9kFgICAQ8PFgIfAQUGVGhlb3J5ZGQCAw8PFgIfAQUCMjFkZAIEDw8WAh8BBQI1MGRkAgUPDxYCHwEFAi0tZGQCBg8PFgIfAQUCQitkZAIED2QWDmYPZBYCAgEPDxYCHwEFBlJNRTI1MWRkAgEPZBYCAgEPDxYCHwEFIEVsZW1lbnRzIG9mIE1lY2hhbmljYWwgRW5nZy4gTGFiZGQCAg9kFgICAQ8PFgIfAQUJUHJhY3RpY2FsZGQCAw8PFgIfAQUCNDhkZAIEDw8WAh8BBQI0NWRkAgUPDxYCHwEFAi0tZGQCBg8PFgIfAQUCQStkZAIFD2QWDmYPZBYCAgEPDxYCHwEFBlJBUzIwM2RkAgEPZBYCAgEPDxYCHwEFFEVuZ2luZWVyaW5nIE1hdGhzLUlJZGQCAg9kFgICAQ8PFgIfAQUGVGhlb3J5ZGQCAw8PFgIfAQUCMjlkZAIEDw8WAh8BBQI2M2RkAgUPDxYCHwEFAi0tZGQCBg8PFgIfAQUCQStkZAIGD2QWDmYPZBYCAgEPDxYCHwEFBlJDUzI1MWRkAgEPZBYCAgEPDxYCHwEFE0NvbXB1dGVyIFByb2dtLiBMYWJkZAICD2QWAgIBDw8WAh8BBQlQcmFjdGljYWxkZAIDDw8WAh8BBQI0MWRkAgQPDxYCHwEFAjQzZGQCBQ8PFgIfAQUCLS1kZAIGDw8WAh8BBQFBZGQCBw9kFg5mD2QWAgIBDw8WAh8BBQZSQ1MyMDFkZAIBD2QWAgIBDw8WAh8BBSJDb21wdXRlciBTeXN0ZW0gJiBQcm9ncmFtbWluZyBpbiBDZGQCAg9kFgICAQ8PFgIfAQUGVGhlb3J5ZGQCAw8PFgIfAQUCMjBkZAIEDw8WAh8BBQIzMWRkAgUPDxYCHwEFAi0tZGQCBg8PFgIfAQUBQ2RkAggPZBYOZg9kFgICAQ8PFgIfAQUGUkNFMjUxZGQCAQ9kFgICAQ8PFgIfAQUdQ29tcHV0ZXIgQWlkZWQgRW5nZy4gR3JhcGhpY3NkZAICD2QWAgIBDw8WAh8BBQlQcmFjdGljYWxkZAIDDw8WAh8BBQI0NmRkAgQPDxYCHwEFAjQ2ZGQCBQ8PFgIfAQUCLS1kZAIGDw8WAh8BBQJBK2RkAgkPZBYOZg9kFgICAQ8PFgIfAQUGUkFTMjAyZGQCAQ9kFgICAQ8PFgIfAQUVRW5naW5lZXJpbmcgQ2hlbWlzdHJ5ZGQCAg9kFgICAQ8PFgIfAQUGVGhlb3J5ZGQCAw8PFgIfAQUCMjlkZAIEDw8WAh8BBQI0MmRkAgUPDxYCHwEFAi0tZGQCBg8PFgIfAQUCQitkZAIKDw8WAh8AaGRkGAIFQGN0bDAzJEFjY29yZGlvblBhbmUxX2NvbnRlbnQkY3RsMDEkY3RsMDAkZ3JkVmlld1N1YmplY3RNYXJrc2hlZXQPPCsADAEIAgFkBUBjdGwwMyRBY2NvcmRpb25QYW5lMV9jb250ZW50JGN0bDAwJGN0bDAwJGdyZFZpZXdTdWJqZWN0TWFya3NoZWV0DzwrAAwBCAIBZLi/GRDxXWJcX8UaZOUki922bea4" />
+
+
+<script src="https://erp.aktu.ac.in/ScriptResource.axd?d=xp0uFhfm4l3LcugEnYl0UUju0YfSfH1JzYWpjMkpB0Uv5kXTFLw4Iktf6vArcpS6jr8OW1gAqkNaIY7sXCTjO-O19EWSrh_yRkR3Zcm1kBnFiRw9JqKURK78nvkIqvyi7oQq8WaqFhHhtJghO3Q4xLCjARFo_szuSpDWqvoUYAyOSrx20&amp;t=ffffffffb53e74b8" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="https://erp.aktu.ac.in/ScriptResource.axd?d=XqjBNVog_IwXxn2sLNPdIfS-fObI3-RpGFnBwrhKKpiUqFOcGsdFXG_2KODsOt4hDZHaorf-SNjTw526L2s_T5iN1N5pHVHR85rB1OrVFX7KU1krcDJAF9Z50lWb57xKutqfWg2&amp;t=ac64ff3" type="text/javascript"></script>
+<script src="https://erp.aktu.ac.in/ScriptResource.axd?d=UrA4OlAGMZrJ6CNqzEd4GNXGj8cR7rFbSLKamzDCE2zFIvf-s37kz1lmUnfbrZf6C5DAZjSA6RATAYGoKyjLe35KQxhtNgk-4PjENiY7u8BmZDZh8uyQWUl0IJv-BsiyqWngoA2&amp;t=ac64ff3" type="text/javascript"></script>
+<script src="https://erp.aktu.ac.in/ScriptResource.axd?d=3MZyGdN3KpBEmoJBhFz_GJnjK3Hq5pyDe_xUTtjx8PLXH5QsBvOvzed5LAdaw9tCIVNaOYmZ3udEt49WTdKd0SRu4hDX4cNVZtosNEKL0D7EM1Fk657N2J1vXVVHF5mKvhU9Wg2&amp;t=ac64ff3" type="text/javascript"></script>
+<script src="https://erp.aktu.ac.in/ScriptResource.axd?d=w4C1fUWkltCA-l4ifpURIJAN0xLW4Qih-4hggZQ30rdYPDqq5iOVrT92jhOe6VVwljy9o6yPkik9PvbH8vKFAwe3Q2Sz27zUBrZ2bas0Ux73HQzT0&amp;t=ac64ff3" type="text/javascript"></script>
+<script src="https://erp.aktu.ac.in/ScriptResource.axd?d=JnkaZDU_9QwbkvwYkQXD_iIBuqhCQl3NcD0Cr4mZvWRaDKkdGeMDwFbZAtIufQzMtcaUGPREGG7bvI-zLlIIE4iubdxxXyLw7IjAzS4YM_-cap1JPzCjNZeDyvLU939pDJdu_w2&amp;t=ac64ff3" type="text/javascript"></script>
+<script src="https://erp.aktu.ac.in/ScriptResource.axd?d=TbX7zK4QMqZWL4q8SE0pxLQq-UFabZo2NZdEiB8oysHU3cSXUY8BsOcUVFOGtSweDPn0R1rRQQWIoe7N2R57YKeG7GfnT0sGKGyFlq23QzO2NubWxC-l2EeVY12lVWkVjVzXbQ2&amp;t=ac64ff3" type="text/javascript"></script>
+<script src="https://erp.aktu.ac.in/ScriptResource.axd?d=Nk3Hc9eSJdeAub7lPAmMpWSW87ViRsKUQiY2rOb7njQbpUnHQoz76g8_oTk7fmz_1rzM4aSAsdSoYmbQJ8jtY9gwHdmcWYsYdHstgKUu83r-oW2I0&amp;t=ac64ff3" type="text/javascript"></script>
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="D918AD05" />
+        
+        <div id="updtpnlOV">
+	
+                <table id="printArea" style="width: 100%; border: solid; border-width: 1px; border-color: gray; border-radius: 4px;">
+                    <tr>
+                        <td>
+                            <div id="pnlContent" style="margin-left: 10px; margin-right: 10px;">
+		
+                                <table style="width: 100%; font-family: Verdana; font-size: 8pt;">
+                                    <tr>
+                                        <td style="text-align: center;">
+                                            <img src="https://erp.aktu.ac.in/Images/Site/AKTUBanner.jpg" /><br />
+                                            <b>
+                                                <a id="hlpkSearchOV" title="Click hear to search new One View record." href="https://erp.aktu.ac.in/WebPages/OneView/OneView.aspx">AKTU-One-View</a>
+                                            </b></td>
+                                    </tr>
+                                </table>
+                                
+                                <table style="width: 100%; font-family: Verdana; font-size: 8pt;">
+                                    <tr>
+                                        <td colspan="2">
+                                            <h3><b>Student Details</b></h3>
+                                            <hr />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 85%;">
+                                            <table style="width: 100%; font-family: Verdana; font-size: 8pt; vertical-align: top;">
+                                                <thead>
+                                                    <tr>
+                                                        <td style="width: 18%;"></td>
+                                                        <td style="width: 2%;"></td>
+                                                        <td style="width: 30%;"></td>
+
+                                                        <td style="width: 18%;"></td>
+                                                        <td style="width: 2%;"></td>
+                                                        <td style="width: 30%;"></td>
+                                                    </tr>
+                                                </thead>
+                                                <tr>
+                                                    <td>
+                                                        <span id="forlblInstituteCodeName" style="font-weight: bold;">Institute Code & Name</span></td>
+                                                    <td><b>:</b></td>
+                                                    <td>
+                                                        <span id="lblInstitute">(029) KIET Group of Institutions(Krishna Instt. of Engg. & Technology),Ghaziabad</span>
+                                                    </td>
+
+                                                    <td>
+                                                        <span id="forlblCourseCodeName" style="font-weight: bold;">Course Code & Name</span></td>
+                                                    <td><b>:</b></td>
+                                                    <td>
+                                                        <span id="lblCourse">(04) Bachelor of Technology</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span id="forlblBranchCodeName" style="font-weight: bold;">Branch Code & Name</span></td>
+                                                    <td><b>:</b></td>
+                                                    <td>
+                                                        <span id="lblBranch">(31) Electronics and Communication Engineering</span>
+                                                    </td>
+
+                                                    <td>
+                                                        <span id="forlblRollNo" style="font-weight: bold;">RollNo</span></td>
+                                                    <td><b>:</b></td>
+                                                    <td>
+                                                        <span id="lblRollNo">1602931100</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span id="forlblEnrollmentNo" style="font-weight: bold;">EnrollmentNo</span></td>
+                                                    <td><b>:</b></td>
+                                                    <td>
+                                                        <span id="lblEnrollmentNo">PROVISIONAL</span>
+                                                    </td>
+
+                                                    <td>
+                                                        <span id="forlblFullName" style="font-weight: bold;">Name</span></td>
+                                                    <td><b>:</b></td>
+                                                    <td>
+                                                        <span id="lblFullName">PINKI YADAV</span>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <span id="forlblFatherName" style="font-weight: bold;">Father's Name</span></td>
+                                                    <td><b>:</b></td>
+                                                    <td>
+                                                        <span id="lblFatherName">SAMAR BAHADUR YADAV</span>
+                                                    </td>
+
+                                                    <td>
+                                                        <span id="forlblGender" style="font-weight: bold;">Gender</span></td>
+                                                    <td><b>:</b></td>
+                                                    <td>
+                                                        <span id="lblGender"></span>
+                                                    </td>
+                                                </tr>
+                                            </table>
+
+                                        </td>
+                                        <td style="width: 10%;">
+                                            <table style="width: 100%; padding-right: 10px; text-align: center; font-family: Verdana; font-size: 8pt; vertical-align: top;">
+                                                <tr>
+                                                    <td>
+                                                        <img id="imgphoto" src="data:image/jpg;base64,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" height="100" style="margin-right: 10px;" />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <table style="width: 100%; padding-right: 10px; text-align: center; font-family: Verdana; font-size: 8pt; vertical-align: top;">
+                                                <tr>
+                                                    <td>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <table style="width: 100%; padding-right: 10px; text-align: center; font-family: Verdana; font-size: 8pt; vertical-align: top;">
+                                                <tr>
+                                                    <td><a onclick="return PrintDiv();" href="1602931100.html#">Print One View</a>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <br />
+
+                                
+                                <table style="width: 100%; font-family: Verdana; font-size: 8pt;">
+                                    <tr>
+                                        <td>
+                                            <h3><b>One View Result
+                                            </b></h3>
+                                            <hr />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: right; "></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            
+
+<style type="text/css">
+    .contentclass {
+        margin: 1em;
+        border-collapse: collapse;
+    }
+
+    .headerclass {
+        padding: .3em;
+        border: 1px #a4a9b2 solid;
+        background: #f2dede;
+        border-radius: 3px;
+    }
+    .button {
+            background-color: #004A7F;
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            border: none;
+            color: #FFFFFF;
+            cursor: pointer;
+            display: inline-block;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        @-webkit-keyframes glowing {
+            0% {
+                background-color: #B20000;
+                -webkit-box-shadow: 0 0 3px #B20000;
+            }
+
+            50% {
+                background-color: #FF0000;
+                -webkit-box-shadow: 0 0 10px #FF0000;
+            }
+
+            100% {
+                background-color: #B20000;
+                -webkit-box-shadow: 0 0 3px #B20000;
+            }
+        }
+
+        @-moz-keyframes glowing {
+            0% {
+                background-color: #B20000;
+                -moz-box-shadow: 0 0 3px #B20000;
+            }
+
+            50% {
+                background-color: #FF0000;
+                -moz-box-shadow: 0 0 10px #FF0000;
+            }
+
+            100% {
+                background-color: #B20000;
+                -moz-box-shadow: 0 0 3px #B20000;
+            }
+        }
+
+        @-o-keyframes glowing {
+            0% {
+                background-color: #B20000;
+                box-shadow: 0 0 3px #B20000;
+            }
+
+            50% {
+                background-color: #FF0000;
+                box-shadow: 0 0 10px #FF0000;
+            }
+
+            100% {
+                background-color: #B20000;
+                box-shadow: 0 0 3px #B20000;
+            }
+        }
+
+        @keyframes glowing {
+            0% {
+                background-color: #B20000;
+                box-shadow: 0 0 3px #B20000;
+            }
+
+            50% {
+                background-color: #FF0000;
+                box-shadow: 0 0 10px #FF0000;
+            }
+
+            100% {
+                background-color: #B20000;
+                box-shadow: 0 0 3px #B20000;
+            }
+        }
+
+        .button {
+            -webkit-animation: glowing 1500ms infinite;
+            -moz-animation: glowing 1500ms infinite;
+            -o-animation: glowing 1500ms infinite;
+            animation: glowing 1500ms infinite;
+        }
+</style>
+
+
+<div id="ctl03_accordion">
+			<input type="hidden" name="ctl03$accordion_AccordionExtender_ClientState" id="ctl03_accordion_AccordionExtender_ClientState" value="-1" /><div id="ctl03" class="headerclass">
+				
+                <table style="width: 100%; font-family: Verdana; font-size: 8pt; cursor: pointer;">
+                    <tr>
+                        <td>
+                            <span id="ctl03_lblSession"><b>Session : </b>2016-17(REGULAR)</span>
+                            <b>Semesters : </b>
+                            <span id="ctl03_lblSem">1,2</span>
+                            <b>Result : </b>
+                            <span id="ctl03_lblResult">CP(0),PASS </span>
+                            <b>Marks : </b>
+                            <span id="ctl03_lblMarks">1390/1800</span>
+                            <span id="ctl03_lblCOP"></span>
+                            <span id="ctl03_lblIsAUCPassed"></span>
+                            <span id="ctl03_lblDivision"></span>
+
+                        </td>
+                    </tr>
+                </table>
+            
+			</div><div id="ctl03" class="contentclass" style="display:none;">
+				
+                <table style="width: 100%; text-align: right; font-family: Verdana; font-size: 8pt;">
+                    <tr>
+                        <td></td>
+                    </tr>
+                </table>
+                <table style="width: 100%; font-family: Verdana; font-size: 8pt;">
+                    <thead>
+                        <tr>
+                            <td style="width: 50%;">
+                                <input type="hidden" name="ctl03$AccordionPane1_content$hdnRollNo" id="ctl03_hdnRollNo" value="1602931100" />
+                                <input type="hidden" name="ctl03$AccordionPane1_content$hdnSessionId" id="ctl03_hdnSessionId" value="2016-17" />
+                            </td>
+                            <td style="width: 50%;">
+                                <input type="hidden" name="ctl03$AccordionPane1_content$hdnInstituteId" id="ctl03_hdnInstituteId" value="029" />
+                                <input type="hidden" name="ctl03$AccordionPane1_content$hdnOneViewId" id="ctl03_hdnOneViewId" value="2274749" />
+                            </td>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td style="vertical-align: top;">
+                            
+<table style="width: 100%; font-family: Verdana; font-size: 8pt;">
+    <thead>
+        <tr>
+            <td style="width: 30%;"></td>
+            <td style="width: 2%;"></td>
+            <td style="width: 18%;"></td>
+
+            <td style="width: 30%;"></td>
+            <td style="width: 2%;"></td>
+            <td style="width: 18%;"></td>
+        </tr>
+    </thead>
+    <tr>
+        <td>
+            <span id="ctl03_ctl00_forlblSemesterId"><b>Semester</b></span></td>
+        <td><b>:</b></td>
+        <td>
+            <span id="ctl03_ctl00_lblSemesterId">1</span>
+        </td>
+
+        <td>
+            <span id="ctl03_ctl00_forlblEvenOdd"><b>EvenOdd</b></span></td>
+        <td><b>:</b></td>
+        <td>
+            <span id="ctl03_ctl00_lblEvenOdd">Odd</span>
+        </td>
+    </tr>
+   
+    <tr>
+        <td>
+            <span id="ctl03_ctl00_forlblTotalSubjectsCount"><b>Total Subjects</b></span></td>
+        <td><b>:</b></td>
+        <td>
+            <span id="ctl03_ctl00_lblTotalSubjectsCount">9</span>
+        </td>
+
+        <td>
+            <span id="ctl03_ctl00_forlblTheorySubjectsCount"><b>Theory Subjects</b></span></td>
+        <td><b>:</b></td>
+        <td>
+            <span id="ctl03_ctl00_lblTheorySubjectsCount">5</span>
+        </td>
+    </tr>
+   
+    <tr>
+        <td>
+            <span id="ctl03_ctl00_forlblPracticalSubjects"><b>Practical Subjects</b></span></td>
+        <td><b>:</b></td>
+        <td>
+            <span id="ctl03_ctl00_lblPracticalSubjects">4</span>
+        </td>
+
+         <td>
+            <span id="ctl03_ctl00_forlblSemesterTotalMarksObtained"><b>Total Marks Obt.</b></span></td>
+        <td><b>:</b></td>
+        <td>
+            <span id="ctl03_ctl00_lblSemesterTotalMarksObtained">674</span>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <span id="ctl03_ctl00_forlblResultStatus"><b>Result Status</b></span></td>
+        <td><b>:</b></td>
+        <td>
+            <span id="ctl03_ctl00_lblResultStatus">CP(0)</span>
+        </td>
+        <td>
+            <span id="ctl03_ctl00_forlblResultSGPA"><b>SGPA</b></span></td>
+        <td><b>:</b></td>
+        <td>
+            <span id="ctl03_ctl00_lblSGPA">7.58</span>
+        </td>
+    </tr>
+   
+    <tr>
+        <td colspan="6">
+            
+<table style="width: 100%; font-family: Verdana; font-size: 8pt;">
+    <thead>
+        <tr>
+            <td style="width: 100%;"></td>
+        </tr>
+    </thead>
+
+    <tr>
+        <td>
+            <hr />
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <div>
+					<table cellspacing="0" rules="all" border="1" id="ctl03_ctl00_ctl00_grdViewSubjectMarksheet" style="width: 100%; font-family: Verdana; font-size: 8pt;">
+						<tr>
+							<th scope="col">Code</th><th scope="col">Name</th><th scope="col">Type</th><th scope="col">Internal</th><th scope="col">External</th><th scope="col">Back Paper</th><th scope="col">Grade</th>
+						</tr><tr>
+							<td>
+                            <span id="ctl03_ctl00_ctl00_grdViewSubjectMarksheet_subCode_0" style="white-space: pre-wrap;">RAS101</span>
+                        </td><td>
+                            <span id="ctl03_ctl00_ctl00_grdViewSubjectMarksheet_subName_0" style="white-space: pre-wrap;">Engineering Physics-I</span>
+                        </td><td>
+                            <span id="ctl03_ctl00_ctl00_grdViewSubjectMarksheet_subType_0" style="white-space: pre-wrap;">Theory</span>
+                        </td><td>25</td><td>42</td><td>--</td><td>B</td>
+						</tr><tr>
+							<td>
+                            <span id="ctl03_ctl00_ctl00_grdViewSubjectMarksheet_subCode_1" style="white-space: pre-wrap;">RAS151</span>
+                        </td><td>
+                            <span id="ctl03_ctl00_ctl00_grdViewSubjectMarksheet_subName_1" style="white-space: pre-wrap;">Engg. Physics Lab</span>
+                        </td><td>
+                            <span id="ctl03_ctl00_ctl00_grdViewSubjectMarksheet_subType_1" style="white-space: pre-wrap;">Practical</span>
+                        </td><td>39</td><td>41</td><td>--</td><td>A</td>
+						</tr><tr>
+							<td>
+                            <span id="ctl03_ctl00_ctl00_grdViewSubjectMarksheet_subCode_2" style="white-space: pre-wrap;">REC101</span>
+                        </td><td>
+                            <span id="ctl03_ctl00_ctl00_grdViewSubjectMarksheet_subName_2" style="white-space: pre-wrap;">Basics Electronics</span>
+                        </td><td>
+                            <span id="ctl03_ctl00_ctl00_grdViewSubjectMarksheet_subType_2" style="white-space: pre-wrap;">Theory</span>
+                        </td><td>24</td><td>48</td><td>--</td><td>B+</td>
+						</tr><tr>
+							<td>
+                            <span id="ctl03_ctl00_ctl00_grdViewSubjectMarksheet_subCode_3" style="white-space: pre-wrap;">REE151</span>
+                        </td><td>
+                            <span id="ctl03_ctl00_ctl00_grdViewSubjectMarksheet_subName_3" style="white-space: pre-wrap;">Basics Electrical Engg. Lab</span>
+                        </td><td>
+                            <span id="ctl03_ctl00_ctl00_grdViewSubjectMarksheet_subType_3" style="white-space: pre-wrap;">Practical</span>
+                        </td><td>46</td><td>44</td><td>--</td><td>A+</td>
+						</tr><tr>
+							<td>
+                            <span id="ctl03_ctl00_ctl00_grdViewSubjectMarksheet_subCode_4" style="white-space: pre-wrap;">RAS103</span>
+                        </td><td>
+                            <span id="ctl03_ctl00_ctl00_grdViewSubjectMarksheet_subName_4" style="white-space: pre-wrap;">Engineering Maths-I</span>
+                        </td><td>
+                            <span id="ctl03_ctl00_ctl00_grdViewSubjectMarksheet_subType_4" style="white-space: pre-wrap;">Theory</span>
+                        </td><td>30</td><td>48</td><td>--</td><td>B+</td>
+						</tr><tr>
+							<td>
+                            <span id="ctl03_ctl00_ctl00_grdViewSubjectMarksheet_subCode_5" style="white-space: pre-wrap;">RAS154</span>
+                        </td><td>
+                            <span id="ctl03_ctl00_ctl00_grdViewSubjectMarksheet_subName_5" style="white-space: pre-wrap;">Professional Communication Lab</span>
+                        </td><td>
+                            <span id="ctl03_ctl00_ctl00_grdViewSubjectMarksheet_subType_5" style="white-space: pre-wrap;">Practical</span>
+                        </td><td>40</td><td>39</td><td>--</td><td>B+</td>
+						</tr><tr>
+							<td>
+                            <span id="ctl03_ctl00_ctl00_grdViewSubjectMarksheet_subCode_6" style="white-space: pre-wrap;">RAS104</span>
+                        </td><td>
+                            <span id="ctl03_ctl00_ctl00_grdViewSubjectMarksheet_subName_6" style="white-space: pre-wrap;">Professional Communication</span>
+                        </td><td>
+                            <span id="ctl03_ctl00_ctl00_grdViewSubjectMarksheet_subType_6" style="white-space: pre-wrap;">Theory</span>
+                        </td><td>20</td><td>43</td><td>--</td><td>B</td>
+						</tr><tr>
+							<td>
+                            <span id="ctl03_ctl00_ctl00_grdViewSubjectMarksheet_subCode_7" style="white-space: pre-wrap;">RME152</span>
+                        </td><td>
+                            <span id="ctl03_ctl00_ctl00_grdViewSubjectMarksheet_subName_7" style="white-space: pre-wrap;">Workshop Practice</span>
+                        </td><td>
+                            <span id="ctl03_ctl00_ctl00_grdViewSubjectMarksheet_subType_7" style="white-space: pre-wrap;">Practical</span>
+                        </td><td>45</td><td>43</td><td>--</td><td>A</td>
+						</tr><tr>
+							<td>
+                            <span id="ctl03_ctl00_ctl00_grdViewSubjectMarksheet_subCode_8" style="white-space: pre-wrap;">REE101</span>
+                        </td><td>
+                            <span id="ctl03_ctl00_ctl00_grdViewSubjectMarksheet_subName_8" style="white-space: pre-wrap;">Basics Electrical Engg.</span>
+                        </td><td>
+                            <span id="ctl03_ctl00_ctl00_grdViewSubjectMarksheet_subType_8" style="white-space: pre-wrap;">Theory</span>
+                        </td><td>26</td><td>31</td><td>--</td><td>C</td>
+						</tr>
+					</table>
+				</div>
+        </td>
+    </tr>
+</table>
+
+        </td>
+    </tr>
+
+     <tr>
+        <td colspan="6">
+            &nbsp;</td>
+    </tr>
+</table>
+                        </td>
+                        <td style="vertical-align: top;">
+                            
+<table style="width: 100%; font-family: Verdana; font-size: 8pt;">
+    <thead>
+        <tr>
+            <td style="width: 30%;"></td>
+            <td style="width: 2%;"></td>
+            <td style="width: 18%;"></td>
+
+            <td style="width: 30%;"></td>
+            <td style="width: 2%;"></td>
+            <td style="width: 18%;"></td>
+        </tr>
+    </thead>
+    <tr>
+        <td>
+            <span id="ctl03_ctl01_forlblSemesterId"><b>Semester</b></span></td>
+        <td><b>:</b></td>
+        <td>
+            <span id="ctl03_ctl01_lblSemesterId">2</span>
+        </td>
+
+        <td>
+            <span id="ctl03_ctl01_forlblEvenOdd"><b>EvenOdd</b></span></td>
+        <td><b>:</b></td>
+        <td>
+            <span id="ctl03_ctl01_lblEvenOdd">Even</span>
+        </td>
+    </tr>
+   
+    <tr>
+        <td>
+            <span id="ctl03_ctl01_forlblTotalSubjectsCount"><b>Total Subjects</b></span></td>
+        <td><b>:</b></td>
+        <td>
+            <span id="ctl03_ctl01_lblTotalSubjectsCount">9</span>
+        </td>
+
+        <td>
+            <span id="ctl03_ctl01_forlblTheorySubjectsCount"><b>Theory Subjects</b></span></td>
+        <td><b>:</b></td>
+        <td>
+            <span id="ctl03_ctl01_lblTheorySubjectsCount">5</span>
+        </td>
+    </tr>
+   
+    <tr>
+        <td>
+            <span id="ctl03_ctl01_forlblPracticalSubjects"><b>Practical Subjects</b></span></td>
+        <td><b>:</b></td>
+        <td>
+            <span id="ctl03_ctl01_lblPracticalSubjects">4</span>
+        </td>
+
+         <td>
+            <span id="ctl03_ctl01_forlblSemesterTotalMarksObtained"><b>Total Marks Obt.</b></span></td>
+        <td><b>:</b></td>
+        <td>
+            <span id="ctl03_ctl01_lblSemesterTotalMarksObtained">716</span>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <span id="ctl03_ctl01_forlblResultStatus"><b>Result Status</b></span></td>
+        <td><b>:</b></td>
+        <td>
+            <span id="ctl03_ctl01_lblResultStatus">PASS </span>
+        </td>
+        <td>
+            <span id="ctl03_ctl01_forlblResultSGPA"><b>SGPA</b></span></td>
+        <td><b>:</b></td>
+        <td>
+            <span id="ctl03_ctl01_lblSGPA">8.29</span>
+        </td>
+    </tr>
+   
+    <tr>
+        <td colspan="6">
+            
+<table style="width: 100%; font-family: Verdana; font-size: 8pt;">
+    <thead>
+        <tr>
+            <td style="width: 100%;"></td>
+        </tr>
+    </thead>
+
+    <tr>
+        <td>
+            <hr />
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <div>
+					<table cellspacing="0" rules="all" border="1" id="ctl03_ctl01_ctl00_grdViewSubjectMarksheet" style="width: 100%; font-family: Verdana; font-size: 8pt;">
+						<tr>
+							<th scope="col">Code</th><th scope="col">Name</th><th scope="col">Type</th><th scope="col">Internal</th><th scope="col">External</th><th scope="col">Back Paper</th><th scope="col">Grade</th>
+						</tr><tr>
+							<td>
+                            <span id="ctl03_ctl01_ctl00_grdViewSubjectMarksheet_subCode_0" style="white-space: pre-wrap;">RAS201</span>
+                        </td><td>
+                            <span id="ctl03_ctl01_ctl00_grdViewSubjectMarksheet_subName_0" style="white-space: pre-wrap;">Engineering Physics-II</span>
+                        </td><td>
+                            <span id="ctl03_ctl01_ctl00_grdViewSubjectMarksheet_subType_0" style="white-space: pre-wrap;">Theory</span>
+                        </td><td>27</td><td>42</td><td>--</td><td>B</td>
+						</tr><tr>
+							<td>
+                            <span id="ctl03_ctl01_ctl00_grdViewSubjectMarksheet_subCode_1" style="white-space: pre-wrap;">RAS252</span>
+                        </td><td>
+                            <span id="ctl03_ctl01_ctl00_grdViewSubjectMarksheet_subName_1" style="white-space: pre-wrap;">Engg. Chemistry Lab</span>
+                        </td><td>
+                            <span id="ctl03_ctl01_ctl00_grdViewSubjectMarksheet_subType_1" style="white-space: pre-wrap;">Practical</span>
+                        </td><td>47</td><td>46</td><td>--</td><td>A+</td>
+						</tr><tr>
+							<td>
+                            <span id="ctl03_ctl01_ctl00_grdViewSubjectMarksheet_subCode_2" style="white-space: pre-wrap;">RME201</span>
+                        </td><td>
+                            <span id="ctl03_ctl01_ctl00_grdViewSubjectMarksheet_subName_2" style="white-space: pre-wrap;">Elements of Mechanical Engg.</span>
+                        </td><td>
+                            <span id="ctl03_ctl01_ctl00_grdViewSubjectMarksheet_subType_2" style="white-space: pre-wrap;">Theory</span>
+                        </td><td>21</td><td>50</td><td>--</td><td>B+</td>
+						</tr><tr>
+							<td>
+                            <span id="ctl03_ctl01_ctl00_grdViewSubjectMarksheet_subCode_3" style="white-space: pre-wrap;">RME251</span>
+                        </td><td>
+                            <span id="ctl03_ctl01_ctl00_grdViewSubjectMarksheet_subName_3" style="white-space: pre-wrap;">Elements of Mechanical Engg. Lab</span>
+                        </td><td>
+                            <span id="ctl03_ctl01_ctl00_grdViewSubjectMarksheet_subType_3" style="white-space: pre-wrap;">Practical</span>
+                        </td><td>48</td><td>45</td><td>--</td><td>A+</td>
+						</tr><tr>
+							<td>
+                            <span id="ctl03_ctl01_ctl00_grdViewSubjectMarksheet_subCode_4" style="white-space: pre-wrap;">RAS203</span>
+                        </td><td>
+                            <span id="ctl03_ctl01_ctl00_grdViewSubjectMarksheet_subName_4" style="white-space: pre-wrap;">Engineering Maths-II</span>
+                        </td><td>
+                            <span id="ctl03_ctl01_ctl00_grdViewSubjectMarksheet_subType_4" style="white-space: pre-wrap;">Theory</span>
+                        </td><td>29</td><td>63</td><td>--</td><td>A+</td>
+						</tr><tr>
+							<td>
+                            <span id="ctl03_ctl01_ctl00_grdViewSubjectMarksheet_subCode_5" style="white-space: pre-wrap;">RCS251</span>
+                        </td><td>
+                            <span id="ctl03_ctl01_ctl00_grdViewSubjectMarksheet_subName_5" style="white-space: pre-wrap;">Computer Progm. Lab</span>
+                        </td><td>
+                            <span id="ctl03_ctl01_ctl00_grdViewSubjectMarksheet_subType_5" style="white-space: pre-wrap;">Practical</span>
+                        </td><td>41</td><td>43</td><td>--</td><td>A</td>
+						</tr><tr>
+							<td>
+                            <span id="ctl03_ctl01_ctl00_grdViewSubjectMarksheet_subCode_6" style="white-space: pre-wrap;">RCS201</span>
+                        </td><td>
+                            <span id="ctl03_ctl01_ctl00_grdViewSubjectMarksheet_subName_6" style="white-space: pre-wrap;">Computer System & Programming in C</span>
+                        </td><td>
+                            <span id="ctl03_ctl01_ctl00_grdViewSubjectMarksheet_subType_6" style="white-space: pre-wrap;">Theory</span>
+                        </td><td>20</td><td>31</td><td>--</td><td>C</td>
+						</tr><tr>
+							<td>
+                            <span id="ctl03_ctl01_ctl00_grdViewSubjectMarksheet_subCode_7" style="white-space: pre-wrap;">RCE251</span>
+                        </td><td>
+                            <span id="ctl03_ctl01_ctl00_grdViewSubjectMarksheet_subName_7" style="white-space: pre-wrap;">Computer Aided Engg. Graphics</span>
+                        </td><td>
+                            <span id="ctl03_ctl01_ctl00_grdViewSubjectMarksheet_subType_7" style="white-space: pre-wrap;">Practical</span>
+                        </td><td>46</td><td>46</td><td>--</td><td>A+</td>
+						</tr><tr>
+							<td>
+                            <span id="ctl03_ctl01_ctl00_grdViewSubjectMarksheet_subCode_8" style="white-space: pre-wrap;">RAS202</span>
+                        </td><td>
+                            <span id="ctl03_ctl01_ctl00_grdViewSubjectMarksheet_subName_8" style="white-space: pre-wrap;">Engineering Chemistry</span>
+                        </td><td>
+                            <span id="ctl03_ctl01_ctl00_grdViewSubjectMarksheet_subType_8" style="white-space: pre-wrap;">Theory</span>
+                        </td><td>29</td><td>42</td><td>--</td><td>B+</td>
+						</tr>
+					</table>
+				</div>
+        </td>
+    </tr>
+</table>
+
+        </td>
+    </tr>
+
+     <tr>
+        <td colspan="6">
+            &nbsp;</td>
+    </tr>
+</table>
+                        </td>
+                    </tr>
+                </table>
+            
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: center; color: red;">
+                                            <hr />
+                                            <br />
+                                            <br />
+                                            <br />
+
+                                            <b>Note: University doesn't own for the errors or omissions, if any, in this statement.</b><br />
+                                            <b>Designed & Developed by
+                                                <span id="lblDevelopers" title="Sadika Kousar, Devbrat Upadhyay, Jitendra Singh &amp; Yogeshwar Yadav"><b>AKTU-SDC Team</b></span>
+                                            </b>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <br />
+                                <br />
+                                <br />
+
+                            
+	</div>
+                        </td>
+                    </tr>
+
+                </table>
+            
+</div>
+        <div id="updtProgress" style="display:none;">
+	
+                <img src="https://erp.aktu.ac.in/Images/Site/loading.gif" /><br />
+                One View is generating. Please wait.............
+            
+</div>
+
+        <script type="text/javascript">
+            function PrintDiv() {
+                var divContents = document.getElementById("printArea").innerHTML;
+                var printWindow = window.open('', '', 'width=750,height=600,left=100,top=25');
+                printWindow.document.write('<html><head><title>One View by AKTU SDC Team</title>');
+                printWindow.document.write('</head><body><div style="background-color: white; font-family: Verdana; font-size: 8pt;">');
+                printWindow.document.write(divContents);
+                printWindow.document.write('</div></body></html>');
+                printWindow.document.close();
+                printWindow.print();
+            }
+        </script>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.AccordionBehavior, {"ClientStateFieldID":"ctl03_accordion_AccordionExtender_ClientState","fadeTransitions":true,"framesPerSecond":60,"headerCssClass":"headerclass","id":"ctl03_accordion_AccordionExtender","requireOpenedPane":false,"selectedIndex":-1}, null, null, $get("ctl03_accordion"));
+});
+//]]>
+</script>
+</form>
+</body>
+</html>
